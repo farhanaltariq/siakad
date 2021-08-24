@@ -2,22 +2,6 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script>
-        var doc = new jsPDF();
-        var specialElementHandlers = {
-            '#editor': function (element, renderer) {
-                return true;
-            }
-        };
-
-        $('#cmd').click(function () {
-            doc.fromHTML($('#content').html(), 15, 15, {
-                'width': 170,
-                    'elementHandlers': specialElementHandlers
-            });
-            doc.save('sample-file.pdf');
-        });
-    </script>
   </head>
   <body>
     <div id="content">
@@ -33,7 +17,7 @@
                 <b>LECTURER(S) DATA</b>
                 <hr>
                 <a href="tambahDosen.php"><button class="btn btn-primary">Add Data</button></a>
-                <a href=""><button id="cmd" class="btn btn-primary">Print Data</button></a>
+                <a href=""><button id="cmd" class="btn btn-primary" onclick=window.print()>Print Data</button></a>
           </div>
       </div>
   <table class="table">
